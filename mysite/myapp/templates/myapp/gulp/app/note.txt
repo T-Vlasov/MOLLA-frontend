@@ -1,0 +1,28 @@
+
+      <div class="slider">
+        <div class="slider__item">
+          <div class="slider-image">
+            <img class="slider-img" src="images/content/imgort-left.png" alt="" >
+          </div>
+        </div>
+        <div class="slider__item">
+          <div class="slider-image">
+            <img class="slider-img" src="images/content/imgort-left.png" alt="" >
+          </div>
+        </div>
+        <div class="slider__item">
+          <div class="slider-image">
+            <img class="slider-img" src="images/content/imgort-left.png" alt="" >
+          </div>
+        </div>
+        <div class="slider__item">
+          <div class="slider-image">
+            <img class="slider-img" src="images/content/imgort-left.png" alt="" >
+          </div>
+        </div>
+        <div class="slider__item">
+          <div class="slider-image">
+            <img class="slider-img" src="images/content/imgort-left.png" alt="" >
+          </div>
+        </div>
+      </div>

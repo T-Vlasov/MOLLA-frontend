@@ -1,0 +1,313 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOLLA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+</head>
+
+<body>
+<div class="wrapper">
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="logo" href="{% url 'index' %}" >
+          <img src={% static "images/logo-05.png" %} alt="">
+        </a>
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__list-item">
+              <a class="menu__list-link" href="{% url 'chairs' %}">Кресла</a>
+            </li>
+            <li class="menu__list-item">
+              <a class="menu__list-link" href="#">Комплектующие</a>
+            </li>
+            <li class="menu__list-item">
+              <a class="menu__list-link" href="#contacts">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="cart" href="cart.html" >
+          <div class="cart__img"></div>
+        </a>
+      </div>
+    </div>
+  </header>
+
+    <main class="main">
+      <section class="top">
+          <div class="top__inner">
+            <div class="top__slider">
+              <div class="top__slider-item top__slider-ortitem">
+                <img class="top__slider-imgort" src={% static "images/content/ortchair.png" %} alt="" >
+                <div class="top__slider-info">
+                  <h3 class="top__slider-title">
+                    RSAM 01-G
+                  </h3>
+                  <p class="top__slider-text">
+                    ортопедическое кресло
+                  </p>
+                  <h3 class="top__slider-title">
+                    32 000Р
+                  </h3>
+                    <h3 class="top__slider-discount">
+                      -50%
+                    </h3>
+                  <div class="top__slider-buttons-ort">
+                    <form action="#.html" target="_blank">
+                      <button class="top__slider-more">
+                        подробнее
+                      </button>
+                    </form>
+                    <div class="bottom__slider-z">
+                      <form action="{% url 'OrtChairs' %}" target="_blank">
+                        <button class="bottom__slider-go">
+                          перейти
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="top__slider-item">
+                <img class="top__slider-img" src={% static "images/content/officechair.png" %} alt="" >
+                <div class="top__slider-info-office">
+                  <h3 class="top__slider-title">
+                    RT-02Q
+                  </h3>
+                  <p class="top__slider-text">
+                    офисное кресло
+                  </p>
+                  <h3 class="top__slider-title">
+                    7 000Р
+                  </h3>
+                  <div>
+                    <h3 class="top__slider-discount top__slider-discount-office">
+                      -40%
+                    </h3>
+                </div>
+                <div class="top__slider-buttons-office">
+                  <form action="#.html" target="_blank">
+                    <button class="top__slider-more">
+                      подробнее
+                    </button>
+                  </form>
+                  <div>
+                    <form action="{% url 'OfficeChairs' %}" target="_blank">
+                      <button class="bottom__slider-goort">
+                        перейти
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="top__slider-item">
+                <img class="top__slider-imgdir" src={% static "images/content/directchair.png" %} alt="" >
+                <div class="all">
+                  <div class="top__slider-info top__slider-info-dir">
+                    <h3 class="top__slider-title">
+                      RT-527
+                    </h3>
+                    <p class="top__slider-text">
+                      кресло руководителя
+                    </p>
+                    <h3 class="top__slider-title">
+                      11 000Р
+                    </h3>
+                    <div>
+                      <h3 class="top__slider-discount top__slider-discountort">
+                        -20%
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="top__slider-buttons">
+                    <form action="{% url 'OfficeChairs' %}" target="_blank">
+                      <button class="top__slider-more">
+                        подробнее
+                      </button>
+                    </form>
+                    <div class="bottom__slider-z">
+                      <form action="office-chairs.html" target="_blank">
+                        <button class="bottom__slider-goort">
+                          перейти
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="top__slider-item">
+                <img class="top__slider-img-game" src={% static "images/content/gamechair.png" %} alt="" >
+                <div class="top__slider-info top__slider-info-game">
+                  <h3 class="top__slider-title">
+                    WARP SG
+                  </h3>
+                  <p class="top__slider-text">
+                    игровое кресло
+                  </p>
+                  <h3 class="top__slider-title">
+                    15 000Р
+                  </h3>
+                    <h3 class="top__slider-discount top__slider-discountort">
+                      -35%
+                    </h3>
+                    <div class="top__slider-buttons-game">
+                      <form action="game-chairs.html" target="_blank">
+                        <button class="top__slider-more">
+                          подробнее
+                        </button>
+                      </form>
+                      <div class="bottom__slider-z">
+                        <form action="{% url 'GameChairs' %}" target="_blank">
+                          <button class="bottom__slider-go-game">
+                            перейти
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+      </section>
+      
+      <section class="bottom">
+        <div class="bottom__inner">
+          <div class="bottom__slider">
+            <div class="bottom__slider-item bottom__slider-ortitem">
+              <div class="bottom__slider-info bottom__slider-infoort">
+                <h4 class="bottom__slider-title bottom__slider-title-ort">
+                  ортопедические кресла
+                </h4>
+                <div class="bottom__slider-imagesort">
+                  <img class="bottom__slider-imgort-left" src={% static "images/content/imgort-left.png" %} alt="" >
+                  <img class="bottom__slider-imgort-right" src={% static "images/content/imgort-right.png"%} alt="" >
+                </div>
+              </div>
+            </div>
+            <div class="bottom__slider-item">
+              <div class="bottom__slider-info bottom__slider-info-office">
+                <h4 class="bottom__slider-title bottom__slider-title-office">
+                  офисные кресла
+                </h4>
+                <div class="bottom__slider-images-office">
+                  <img class="bottom__slider-img-office-left" src={% static "images/content/imgoff-left.png"%} alt="" >
+                  <img class="bottom__slider-img-office-right" src={% static "images/content/imgoff-right.png"%} alt="" >
+                </div>
+              </div>
+            </div>
+            <div class="bottom__slider-item">
+              <div class="bottom__slider-info bottom__slider-info-office">
+                <h4 class="bottom__slider-title bottom__slider-title-dir">
+                  кресла руководителя
+                </h4>
+                <div class="bottom__slider-images-dir">
+                  <img class="bottom__slider-img-dir-left" src={% static "images/content/imgdir_left.png"%} alt="" >
+                  <img class="bottom__slider-img-dir-right" src={% static "images/content/imgdir_right.png"%} alt="" >
+                </div>
+              </div>
+            </div>
+            <div class="bottom__slider-item">
+              <div class="bottom__slider-info bottom__slider-info-office">
+                <h4 class="bottom__slider-title bottom__slider-title-game">
+                  игровые кресла
+                </h4>
+                <div class="bottom__slider-images-game">
+                  <img class="bottom__slider-img-game-left" src={% static "images/content/imggame-left.png"%} alt="" >
+                  <img class="bottom__slider-img-game-right" src={% static "images/content/imggame-right.png"%} alt="" >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="catalog">
+      <div class="catalog">
+        <h4 class="catalog__title">
+          Каталог
+        </h4>
+        <div class="categories">
+          <div class="up__categories-items">
+            <a class="categories__item categories__item-office" href="{% url 'OfficeChairs' %}">
+              <div class="categories__images categories__images-office">
+                <img src={% static "images/content/categories/office.png"%} alt="" class="categories__img">
+              </div>
+              <div class="categories__info">
+                <h6 class="categories__info-title">
+                  офисные
+                </h6>
+              </div>
+            </a>
+            <a class="categories__item categories__item-office" href="{% url 'OfficeChairs' %}">
+              <div class="categories__images categories__images-dir">
+                <img src={% static "images/content/categories/dir.png"%} alt="" class="categories__img">
+              </div>
+              <div class="categories__info">
+                <h6 class="categories__info-title">
+                  для руководителя
+                </h6>
+              </div>
+            </a>
+          </div>
+          <div class="down__categories-items categories__item-game">
+            <a class="categories__item" href="{% url 'GameChairs' %}">
+              <div class="categories__images categories__images-game">
+                <img src={% static "images/content/categories/game.png"%} alt="" class="categories__img">
+              </div>
+              <div class="categories__info">
+                <h6 class="categories__info-title">
+                  игровые
+                </h6>
+              </div>
+            </a>
+            <a class="categories__item categories__item-ort" href='{% url 'OrtChairs' %}'>
+              <div class="categories__images categories__images-ort">
+                <img src={% static "images/content/categories/ort.png"%} alt="" class="categories__img categories__img-ort">
+              </div>
+              <div class="categories__info">
+                <h6 class="categories__info-title">
+                  ортопедические
+                </h6>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+    <footer id="contacts" class="footer">
+      <div class="footer__content">
+        <div class="container">
+          <div class="footer__inner">
+            <div class="footer__info">
+              <h4 class="footer__info-title">
+                Контакты
+              </h4>
+              <a href="mailto:MOLLA@gmail.com" class="footer__info-email">
+                MOLLA@gmail.com
+              </a>
+              <p class="footer__info-phone">3456</p>
+            </div>
+            <nav class="footer__menu">
+              <ul class="footer__menu-iist">
+                <li class="footer__menu-item"><a class="footer__menu-link" href="#">Доставка</a></li>
+                <li class="footer__menu-item"><a class="footer__menu-link" href="#">FAQ</a></li>
+                <li class="footer__menu-item"><a class="footer__menu-link" href="#">О нас</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src={% static "js/main.min.js" %}></script>
+</body>
+
+</html>

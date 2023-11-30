@@ -1,0 +1,111 @@
+$default: #ffa500;
+
+// @media (min-width: 30em) {
+//	%card {
+	  
+//	}
+//  }
+
+@mixin title-font {
+	font-family: Raydis;
+	src: url("fonts/ofont.ru_Raydis.ttf")
+}
+
+%title-font {
+    @include title-font;
+}
+
+.title-font {
+    @extend %title-font;
+}
+
+@media (prefers-color-scheme: dark) {
+	%card_dark {
+		margin-top:30px;
+		margin-bottom: 50px;
+		background-color: #575353;
+		margin: 20px;
+		padding: 20px;
+		padding-left: 10px;
+		padding-right: 30px;
+		width: 500px;
+		height: 300px;
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		transition: all .2s;
+		&__title{
+			@include title-font;
+			font-size: 20pt;
+			color:#dfbeb9;
+		}
+		&__description{
+			font-size: 12pt;
+			color:#dfbeb9;
+		}
+		&__price{
+			@include title-font;
+			font-size: 18pt;
+			margin-top:5px;
+			color:#dfbeb9;
+		}
+		&__img{
+			width:200px;
+			height:250px;
+			padding:10px;
+			margin-right:20px;
+			display: flex;
+			justify-content: left;
+			align-items: center;
+		}
+		&__image{
+			width:220px;
+		}
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	%card_light {
+		margin-top:30px;
+		margin-bottom: 50px;
+		background-color: #f3f3f3;
+		margin: 20px;
+		padding: 20px;
+		padding-left: 10px;
+		padding-right: 30px;
+		width: 500px;
+		height: 300px;
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		transition: all .2s;
+		&__title{
+			@include title-font;
+			font-size: 20pt;
+			color:#c63419;
+		}
+		&__description{
+			font-size: 12pt;
+			color:#c63419;
+		}
+		&__price{
+			@include title-font;
+			font-size: 18pt;
+			margin-top:5px;
+			color:#c63419;
+		}
+		&__img{
+			width:200px;
+			height:250px;
+			padding:10px;
+			margin-right:20px;
+			display: flex;
+			justify-content: left;
+			align-items: center;
+		}
+		&__image{
+			width:220px;
+		}
+	}
+}
+

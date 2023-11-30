@@ -1,0 +1,62 @@
+html,
+body {
+	height: 100%;
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700px;
+	font-size: 16px;
+	line-height: 27px;
+	background-color: #c63419;
+	color: $default
+}
+
+@font-face{
+	font-family: Raydis;
+	src: url("fonts/ofont.ru_Raydis.ttf")
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+
+.container{
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.top__slider {
+    position: relative;
+}
+
+.top__slider .slick-arrow{
+	position: absolute;
+    top: 50%;
+    font-size: 0;
+    width: 30px;
+    height: 30px;
+	border:none;
+    margin: -15px 0 0 0;
+    z-index: 2;
+}
+
+.top__slider .slick-arrow.slick-prev {
+	left: 280px;
+	background: url("../images/content/leftarrow.png") 0 0 / 100% no-repeat;
+  }
+
+.top__slider .slick-arrow.slick-next {
+	right: 280px;
+	background: url("../images/content/rightarrow.png") 0 0 / 100% no-repeat;
+  }
