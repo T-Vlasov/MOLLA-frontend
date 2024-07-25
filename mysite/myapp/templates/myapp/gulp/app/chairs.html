@@ -21,12 +21,12 @@
     <div class="container">
       <div class="header__inner">
         <a class="logo" href="{% url 'index' %}" >
-          <img src={% static "images/logo-05.png" %} alt="">
+          <img src="{% static 'images/logo-05.png' %}" alt="">
         </a>
         <nav class="menu">
           <ul class="menu__list">
             <li class="menu__list-item">
-              <a class="menu__list-link cart" href="chairs.html">Кресла</a>
+              <a class="menu__list-link cart" href="{% url 'chairs' %}">Кресла</a>
             </li>
             <li class="menu__list-item">
               <a class="menu__list-link" href="#">Комплектующие</a>
@@ -50,29 +50,26 @@
         <a class="menu__links-item menu__links-item__ort" href="">Ортопедические</a>
       </div>
     </section>
-    <section class="office-chairs">
-      {% for k in officeCardsCountPrepend %}
-      {% with aol=forloop.counter0 %}
-      <div class="cards">
-        {% with item=officeItems|get_val:aol %}
-        {% for i in item %}
-        {% with a=forloop.counter|stringformat:'s' %}
-        <div class="card">
+    <section class="chairs">
+      <div class='cards'>  
+      {% for k in items %}
+      {% if k.group == "office" %}
+        <div class="card-office">
           <div class="card__img">
-            <a href="office-chair-1.html"><img src='{{i.image.url|default_if_none:'#'}}' class="card__image"></a>
+            <a href="office-chair-1.html"><img src='{{k.image.url|default_if_none:'#'}}' class="card__image"></a>
           </div>
           <div class="card__info">
             <h4 class="card__title">
-              <a class="card__title card__title-cart" href="office-chair-1.html">{{i}}</a>
+              <a class="card__title card__title-cart" href="office-chair-1.html">{{k}}</a>
             </h4>
             <p class="card__description">
-              <a class="card__description card__description-cart" href="office-chair-1.html">{{i.description1}}</a>
+              <a class="card__description card__description-cart" href="office-chair-1.html">{{k.description1}}</a>
             </p>
             <p class="card__description">
-              <a class="card__description card__description-cart2" href="office-chair-1.html">{{i.description2}}</a>
+              <a class="card__description card__description-cart2" href="office-chair-1.html">{{k.description2}}</a>
             </p>
             <h5 class="card__price">
-              <a class="card__price card__price-cart" href="office-chair-1.html">{{i.price}}</a>
+              <a class="card__price card__price-cart" href="office-chair-1.html">{{k.price}}</a>
             </h5>
             <div class="buttons">
               <button class="buy">
@@ -98,252 +95,134 @@
             </div>
           </div>
         </div>
-        {% endwith %}
-        {% endfor %}
-        {% endwith %}
-      </div>
-      {% endwith %}
+      {% elif k.group == "ort" %}
+        <div class="card-ort">
+          <div class="card__img">
+            <a href="office-chair-1.html"><img src='{{k.image.url|default_if_none:'#'}}' class="card__image"></a>
+          </div>
+          <div class="card__info">
+            <h4 class="card__title">
+              <a class="card__title card__title-cart" href="office-chair-1.html">{{k}}</a>
+            </h4>
+            <p class="card__description">
+              <a class="card__description card__description-cart" href="office-chair-1.html">{{k.description1}}</a>
+            </p>
+            <p class="card__description">
+              <a class="card__description card__description-cart2" href="office-chair-1.html">{{k.description2}}</a>
+            </p>
+            <h5 class="card__price">
+              <a class="card__price card__price-cart" href="office-chair-1.html">{{k.price}}</a>
+            </h5>
+            <div class="buttons">
+              <button class="buy">
+                Купить
+              </button>
+              <div class="counter">
+                <button class="plus d-none">
+                  +
+                </button>
+                <div class="count d-none">1</div>
+                <button class="minus d-none">
+                  -
+                </button>
+              </div>
+              <button class="like"></button>
+            </div>
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </div>
+        </div>
+      {% elif k.group == "ort" %}
+        <div class="card-ort">
+          <div class="card__img">
+            <a href="office-chair-1.html"><img src='{{k.image.url|default_if_none:'#'}}' class="card__image"></a>
+          </div>
+          <div class="card__info">
+            <h4 class="card__title">
+              <a class="card__title card__title-cart" href="office-chair-1.html">{{k}}</a>
+            </h4>
+            <p class="card__description">
+              <a class="card__description card__description-cart" href="office-chair-1.html">{{k.description1}}</a>
+            </p>
+            <p class="card__description">
+              <a class="card__description card__description-cart2" href="office-chair-1.html">{{k.description2}}</a>
+            </p>
+            <h5 class="card__price">
+              <a class="card__price card__price-cart" href="office-chair-1.html">{{k.price}}</a>
+            </h5>
+            <div class="buttons">
+              <button class="buy">
+                Купить
+              </button>
+              <div class="counter">
+                <button class="plus d-none">
+                  +
+                </button>
+                <div class="count d-none">1</div>
+                <button class="minus d-none">
+                  -
+                </button>
+              </div>
+              <button class="like"></button>
+            </div>
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </div>
+        </div>
+        {% elif k.group == "game" %}
+        <div class="card-game">
+          <div class="card__img">
+            <a href="office-chair-1.html"><img src='{{k.image.url|default_if_none:'#'}}' class="card__image"></a>
+          </div>
+          <div class="card__info">
+            <h4 class="card__title">
+              <a class="card__title card__title-cart" href="office-chair-1.html">{{k}}</a>
+            </h4>
+            <p class="card__description">
+              <a class="card__description card__description-cart" href="office-chair-1.html">{{k.description1}}</a>
+            </p>
+            <p class="card__description">
+              <a class="card__description card__description-cart2" href="office-chair-1.html">{{k.description2}}</a>
+            </p>
+            <h5 class="card__price">
+              <a class="card__price card__price-cart" href="office-chair-1.html">{{k.price}}</a>
+            </h5>
+            <div class="buttons">
+              <button class="buy">
+                Купить
+              </button>
+              <div class="counter">
+                <button class="plus d-none">
+                  +
+                </button>
+                <div class="count d-none">1</div>
+                <button class="minus d-none">
+                  -
+                </button>
+              </div>
+              <button class="like"></button>
+            </div>
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </div>
+        </div>
+      {% endif %}
       {% endfor %}
-      <div class="cards">
-        {% for n in officeAppendItems %}
-        <div class="card">
-          <div class="card__img">
-            <a href="office-chair-1.html"><img src='{{n.image_url|default_if_none:'#'}}' alt="" class="card__image"></a>
-          </div>
-          <div class="card__info">
-            <h4 class="card__title">
-              <a class="card__title card__title-cart" href="office-chair-1.html">{{n.name}}</a>
-            </h4>
-            <p class="card__description">
-              <a class="card__description card__description-cart" href="office-chair-1.html">{{n.description1}}</a>
-            </p>
-            <p class="card__description">
-              <a class="card__description card__description-cart2" href="office-chair-1.html">{{n.description2}}</a>
-            </p>
-            <h5 class="card__price">
-              <a class="card__price card__price-cart" href="office-chair-1.html">{{n.price}}</a>
-            </h5>
-            <div class="buttons">
-              <button class="buy">
-                Купить
-              </button>
-              <div class="counter">
-                <button class="plus d-none">
-                  +
-                </button>
-                <div class="count d-none">1</div>
-                <button class="minus d-none">
-                  -
-                </button>
-              </div>
-              <button class="like"></button>
-            </div>
-            <div class="stars">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
-    <section class="game-chairs">
-      {% for k in gameCardsCountPrepend %}
-      {% with aol=forloop.counter0 %}
-      <div class="cards">
-        {% with item=gameItems|get_val:aol %}
-        {% for i in item %}
-        <div class="card">
-          <div class="card__img">
-            <a href="office-chair-1.html"><img src="{{i.image.url|default_if_none:'#'}}" alt="" class="card__image"></a>
-          </div>
-          <div class="card__info">
-            <h4 class="card__title">
-              <a class="card__title card__title-cart" href="office-chair-1.html">{{i}}</a>
-            </h4>
-            <p class="card__description">
-              <a class="card__description card__description-cart" href="office-chair-1.html">{{i.description1}}</a>
-            </p>
-            <p class="card__description">
-              <a class="card__description card__description-cart2" href="office-chair-1.html">{{i.description2}}</a>
-            </p>
-            <h5 class="card__price">
-              <a class="card__price card__price-cart" href="office-chair-1.html">{{i.price}}</a>
-            </h5>
-            <div class="buttons">
-              <button class="buy">
-                Купить
-              </button>
-              <div class="counter">
-                <button class="plus d-none">
-                  +
-                </button>
-                <div class="count d-none">1</div>
-                <button class="minus d-none">
-                  -
-                </button>
-              </div>
-              <button class="like"></button>
-            </div>
-            <div class="stars">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-        {% endwith %}
-      </div>
-      {% endwith %}
-      {% endfor %}
-      <div class="cards">
-        {% for n in gameAppendItems %}
-        <div class="card">
-          <div class="card__img">
-            <a href="office-chair-1.html"><img src="{{n.image_url|default_if_none:'#'}}" alt="" class="card__image"></a>
-          </div>
-          <div class="card__info">
-            <h4 class="card__title">
-              <a class="card__title card__title-cart" href="office-chair-1.html">{{n.name}}</a>
-            </h4>
-            <p class="card__description">
-              <a class="card__description card__description-cart" href="office-chair-1.html">{{n.description1}}</a>
-            </p>
-            <p class="card__description">
-              <a class="card__description card__description-cart2" href="office-chair-1.html">{{n.description2}}</a>
-            </p>
-            <h5 class="card__price">
-              <a class="card__price card__price-cart" href="office-chair-1.html">{{n.price}}</a>
-            </h5>
-            <div class="buttons">
-              <button class="buy">
-                Купить
-              </button>
-              <div class="counter">
-                <button class="plus d-none">
-                  +
-                </button>
-                <div class="count d-none">1</div>
-                <button class="minus d-none">
-                  -
-                </button>
-              </div>
-              <button class="like"></button>
-            </div>
-            <div class="stars">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
-    <section class="ort-chairs">
-      {% for k in ortCardsCountPrepend %}
-      {% with aol=forloop.counter0 %}
-      <div class="cards">
-        {% with item=ortItems|get_val:aol %}
-        {% for i in item %}
-        <div class="card">
-          <div class="card__img">
-            <a href="office-chair-1.html"><img src="{{i.image.url|default_if_none:'#'}}" alt="" class="card__image"></a>
-          </div>
-          <div class="card__info">
-            <h4 class="card__title">
-              <a class="card__title card__title-cart" href="office-chair-1.html">{{i}}</a>
-            </h4>
-            <p class="card__description">
-              <a class="card__description card__description-cart" href="office-chair-1.html">{{i.description1}}</a>
-            </p>
-            <p class="card__description">
-              <a class="card__description card__description-cart2" href="office-chair-1.html">{{i.description2}}</a>
-            </p>
-            <h5 class="card__price">
-              <a class="card__price card__price-cart" href="office-chair-1.html">{{i.price}}</a>
-            </h5>
-            <div class="buttons">
-              <button class="buy">
-                Купить
-              </button>
-              <div class="counter">
-                <button class="plus d-none">
-                  +
-                </button>
-                <div class="count d-none">1</div>
-                <button class="minus d-none">
-                  -
-                </button>
-              </div>
-              <button class="like"></button>
-            </div>
-            <div class="stars">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-        {% endwith %}
-      </div>
-      {% endwith %}
-      {% endfor %}
-      <div class="cards">
-        {% for n in ortAppendItems %}
-        <div class="card">
-          <div class="card__img">
-            <a href="office-chair-1.html"><img src="{{n.image.url|default_if_none:'#'}}" alt="" class="card__image"></a>
-          </div>
-          <div class="card__info">
-            <h4 class="card__title">
-              <a class="card__title card__title-cart" href="office-chair-1.html">{{n.name}}</a>
-            </h4>
-            <p class="card__description">
-              <a class="card__description card__description-cart" href="office-chair-1.html">{{n.description1}}</a>
-            </p>
-            <p class="card__description">
-              <a class="card__description card__description-cart2" href="office-chair-1.html">{{n.description2}}</a>
-            </p>
-            <h5 class="card__price">
-              <a class="card__price card__price-cart" href="office-chair-1.html">{{n.price}}</a>
-            </h5>
-            <div class="buttons">
-              <button class="buy">
-                Купить
-              </button>
-              <div class="counter">
-                <button class="plus d-none">
-                  +
-                </button>
-                <div class="count d-none">1</div>
-                <button class="minus d-none">
-                  -
-                </button>
-              </div>
-              <button class="like"></button>
-            </div>
-            <div class="stars">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
       </div>
     </section>
   </main>

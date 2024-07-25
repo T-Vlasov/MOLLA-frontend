@@ -1,10 +1,8 @@
 from django.urls import path
-from myapp.views import index, chairs, OortChairs, GgameChairs, OofficeChairs
+from myapp.views import index, CHAIRS, profile
 
 urlpatterns = [
     path('index/', index, name='index'),
-    path('chairs/', chairs, name='chairs'),
-    path('officeChairs/', OofficeChairs, name='OfficeChairs'),
-    path('gameChairs/', GgameChairs, name='GameChairs'),
-    path('ortChairs/', OortChairs, name='OrtChairs'),
+    path('chairs/', CHAIRS, name='chairs'),
+    path('profile/', profile, name='profile')
 ]

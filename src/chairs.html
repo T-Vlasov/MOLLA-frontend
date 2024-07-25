@@ -1,0 +1,258 @@
+{% load custom_filters %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOLLA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+<div class="wrapper">
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <a class="logo" href="{% url 'index' %}" >
+          <img src={% static "images/logo-05.png" %} alt="">
+        </a>
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__list-item">
+              <a class="menu__list-link cart" href="{% url 'chairs' %}">Кресла</a>
+            </li>
+            <li class="menu__list-item">
+              <a class="menu__list-link" href="#">Комплектующие</a>
+            </li>
+            <li class="menu__list-item">
+              <a class="menu__list-link" href="#contacts">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="cart" href="cart.html" >
+          <div class="cart__img"></div>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="menu">
+      <div class="menu__links">
+        <a class="menu__links-item menu__links-item__office" href="">Офисные</a>
+        <a class="menu__links-item menu__links-item__game" href="">Игровые</a>
+        <a class="menu__links-item menu__links-item__ort" href="">Ортопедические</a>
+      </div>
+    </section>
+    <section class="chairs">
+      <div class='cards'>  
+      {% for k in items %}
+      {% if k.group == "office" %}
+        <div class="card-office">
+          <div class="card__img">
+            <a href="office-chair-1.html"><img src='{{k.image.url|default_if_none:'#'}}' class="card__image"></a>
+          </div>
+          <div class="card__info">
+            <h4 class="card__title">
+              <a class="card__title card__title-cart" href="office-chair-1.html">{{k}}</a>
+            </h4>
+            <p class="card__description">
+              <a class="card__description card__description-cart" href="office-chair-1.html">{{k.description1}}</a>
+            </p>
+            <p class="card__description">
+              <a class="card__description card__description-cart2" href="office-chair-1.html">{{k.description2}}</a>
+            </p>
+            <h5 class="card__price">
+              <a class="card__price card__price-cart" href="office-chair-1.html">{{k.price}}</a>
+            </h5>
+            <div class="buttons">
+              <button class="buy">
+                Купить
+              </button>
+              <div class="counter">
+                <button class="plus d-none">
+                  +
+                </button>
+                <div class="count d-none">1</div>
+                <button class="minus d-none">
+                  -
+                </button>
+              </div>
+              <button class="like"></button>
+            </div>
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </div>
+        </div>
+      {% elif k.group == "ort" %}
+        <div class="card-ort">
+          <div class="card__img">
+            <a href="office-chair-1.html"><img src='{{k.image.url|default_if_none:'#'}}' class="card__image"></a>
+          </div>
+          <div class="card__info">
+            <h4 class="card__title">
+              <a class="card__title card__title-cart" href="office-chair-1.html">{{k}}</a>
+            </h4>
+            <p class="card__description">
+              <a class="card__description card__description-cart" href="office-chair-1.html">{{k.description1}}</a>
+            </p>
+            <p class="card__description">
+              <a class="card__description card__description-cart2" href="office-chair-1.html">{{k.description2}}</a>
+            </p>
+            <h5 class="card__price">
+              <a class="card__price card__price-cart" href="office-chair-1.html">{{k.price}}</a>
+            </h5>
+            <div class="buttons">
+              <button class="buy">
+                Купить
+              </button>
+              <div class="counter">
+                <button class="plus d-none">
+                  +
+                </button>
+                <div class="count d-none">1</div>
+                <button class="minus d-none">
+                  -
+                </button>
+              </div>
+              <button class="like"></button>
+            </div>
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </div>
+        </div>
+      {% elif k.group == "ort" %}
+        <div class="card-ort">
+          <div class="card__img">
+            <a href="office-chair-1.html"><img src='{{k.image.url|default_if_none:'#'}}' class="card__image"></a>
+          </div>
+          <div class="card__info">
+            <h4 class="card__title">
+              <a class="card__title card__title-cart" href="office-chair-1.html">{{k}}</a>
+            </h4>
+            <p class="card__description">
+              <a class="card__description card__description-cart" href="office-chair-1.html">{{k.description1}}</a>
+            </p>
+            <p class="card__description">
+              <a class="card__description card__description-cart2" href="office-chair-1.html">{{k.description2}}</a>
+            </p>
+            <h5 class="card__price">
+              <a class="card__price card__price-cart" href="office-chair-1.html">{{k.price}}</a>
+            </h5>
+            <div class="buttons">
+              <button class="buy">
+                Купить
+              </button>
+              <div class="counter">
+                <button class="plus d-none">
+                  +
+                </button>
+                <div class="count d-none">1</div>
+                <button class="minus d-none">
+                  -
+                </button>
+              </div>
+              <button class="like"></button>
+            </div>
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </div>
+        </div>
+        {% elif k.group == "game" %}
+        <div class="card-game">
+          <div class="card__img">
+            <a href="office-chair-1.html"><img src='{{k.image.url|default_if_none:'#'}}' class="card__image"></a>
+          </div>
+          <div class="card__info">
+            <h4 class="card__title">
+              <a class="card__title card__title-cart" href="office-chair-1.html">{{k}}</a>
+            </h4>
+            <p class="card__description">
+              <a class="card__description card__description-cart" href="office-chair-1.html">{{k.description1}}</a>
+            </p>
+            <p class="card__description">
+              <a class="card__description card__description-cart2" href="office-chair-1.html">{{k.description2}}</a>
+            </p>
+            <h5 class="card__price">
+              <a class="card__price card__price-cart" href="office-chair-1.html">{{k.price}}</a>
+            </h5>
+            <div class="buttons">
+              <button class="buy">
+                Купить
+              </button>
+              <div class="counter">
+                <button class="plus d-none">
+                  +
+                </button>
+                <div class="count d-none">1</div>
+                <button class="minus d-none">
+                  -
+                </button>
+              </div>
+              <button class="like"></button>
+            </div>
+            <div class="stars">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      {% endfor %}
+      </div>
+    </section>
+  </main>
+  <footer id="contacts" class="footer footer-chairs">
+    <div class="footer__content">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__info">
+            <h4 class="footer__info-title">
+              Контакты
+            </h4>
+            <a href="mailto:MOLLA@gmail.com" class="footer__info-email">
+              MOLLA@gmail.com
+            </a>
+            <p class="footer__info-phone">3456</p>
+          </div>
+          <nav class="footer__menu">
+            <ul class="footer__menu-iist">
+              <li class="footer__menu-item"><a class="footer__menu-link" href="#">Доставка</a></li>
+              <li class="footer__menu-item"><a class="footer__menu-link" href="#">FAQ</a></li>
+              <li class="footer__menu-item"><a class="footer__menu-link" href="#">О нас</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+  <script src={% static "js/main.min.js" %}></script>
+</body>
+
+</html>
